@@ -1,0 +1,45 @@
+Tài Liệu Đặt Tên Endpoint API Quản Lý Sách
+1. Nguyên tắc chung
+Sử dụng danh từ số nhiều để biểu thị tài nguyên (resources).
+
+Tuân thủ RESTful: mỗi HTTP method tương ứng với hành động cụ thể.
+
+Đặt tên bằng tiếng Anh, viết thường và phân tách bằng dấu gạch ngang nếu cần.
+
+Hạn chế sử dụng động từ trong URL (hành động được thể hiện qua phương thức HTTP).
+
+2. Các tài nguyên chính
+books – sách
+
+authors – tác giả
+
+genres – thể loại
+
+3. Cấu trúc endpoint theo HTTP method
+BOOKS – Quản lý sách
+Hành động	HTTP	Endpoint	Mô tả
+Lấy danh sách sách	GET	/books	Trả về toàn bộ danh sách sách
+Lấy chi tiết sách	GET	/books/{id}	Lấy thông tin của một sách cụ thể
+Thêm sách mới	POST	/books	Tạo mới một sách
+Cập nhật sách	PUT	/books/{id}	Cập nhật thông tin sách
+Xoá sách	DELETE	/books/{id}	Xoá một sách cụ thể
+AUTHORS – Quản lý tác giả
+Hành động	HTTP	Endpoint	Mô tả
+Lấy danh sách tác giả	GET	/authors	Trả về danh sách tác giả
+Lấy chi tiết tác giả	GET	/authors/{id}	Thông tin một tác giả cụ thể
+Thêm tác giả mới	POST	/authors	Tạo mới một tác giả
+Cập nhật tác giả	PUT	/authors/{id}	Cập nhật thông tin tác giả
+Xoá tác giả	DELETE	/authors/{id}	Xoá tác giả
+
+🏷️ GENRES – Quản lý thể loại
+Hành động	HTTP	Endpoint	Mô tả
+Lấy danh sách thể loại	GET	/genres	Trả về danh sách thể loại
+Lấy chi tiết thể loại	GET	/genres/{id}	Lấy thông tin một thể loại cụ thể
+Thêm thể loại mới	POST	/genres	Tạo mới thể loại
+Cập nhật thể loại	PUT	/genres/{id}	Cập nhật thể loại
+Xoá thể loại	DELETE	/genres/{id}	Xoá thể loại
+
+4. Các endpoint quan hệ (tuỳ chọn mở rộng)
+Hành động	HTTP	Endpoint	Mô tả
+Lấy sách của một tác giả	GET	/authors/{id}/books	Danh sách sách của tác giả
+Lấy sách theo thể loại	GET	/genres/{id}/books	Danh sách sách thuộc thể loại
